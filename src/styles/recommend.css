@@ -139,6 +139,7 @@
   position: relative;
   font-size: 2rem;
   font-weight: 700;
+  /* margin-left: 5px; */
   font-style: normal;
 }
 .recommend-good-info-desc {
@@ -151,6 +152,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  letter-spacing: 0.005px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }

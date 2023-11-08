@@ -33,15 +33,14 @@
 }
 
 .visual-slide-prev::before {
-  content: "";
-  position: relative;
-  width: 10px;
-  height: 18px;
-  display: block;
-  margin: 0 auto;
-  background: url("http://localhost:3000/images/slider_arrow.svg") no-repeat
-    center;
-  transform: rotateY(180deg);
+    content: "";
+    position: relative;
+    width: 10px;
+    height: 18px;
+    display: block;
+    margin: 0 auto;
+    background: url("../images/slider_arrow.svg") no-repeat center;
+    transform: rotateY(180deg)
 }
 .visual-slide-prev {
   position: absolute;
@@ -59,15 +58,15 @@
   border-radius: 50%;
 }
 
+
 .visual-slide-next::before {
-  content: "";
-  position: relative;
-  width: 10px;
-  height: 18px;
-  display: block;
-  margin: 0 auto;
-  background: url("http://localhost:3000/images/slider_arrow.svg") no-repeat
-    center;
+    content: "";
+    position: relative;
+    width: 10px;
+    height: 18px;
+    display: block;
+    margin: 0 auto;
+    background: url("../images/slider_arrow.svg") no-repeat center;
 }
 .visual-slide-next {
   position: absolute;

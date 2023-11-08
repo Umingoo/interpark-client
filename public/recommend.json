@@ -1,0 +1,83 @@
+{
+  "total": 12,
+  "good_1": {
+    "image": "images/r_1.jpg",
+    "discount": 27,
+    "price": 49900,
+    "desc": "[스포츠파크] 노스페이스 겨울 구스다운 패딩슬립온 NS93M50",
+    "url": "a.html"
+  },
+  "good_2": {
+    "image": "images/r_2.jpg",
+    "discount": 7,
+    "price": 61460,
+    "desc": "CLARINS 클라랑스 엑스트라 퍼밍 넥 앤 데콜테 케어 75ML / 넥크림/ 여행필수템 (11/7 예약발송)",
+    "url": "a.html"
+  },
+  "good_3": {
+    "image": "images/r_3.jpg",
+    "discount": 17,
+    "price": 13860,
+    "desc": "불스원 폴라패밀리 캐릭터 통풍구 방향제 X 3개입",
+    "url": "a.html"
+  },
+  "good_4": {
+    "image": "images/r_4.jpg",
+    "discount": 13,
+    "price": 6960,
+    "desc": "[텐바이텐][1+1 한정판매] 2024 스누피 데스크 캘린더 1+1",
+    "url": "a.html"
+  },
+  "good_5": {
+    "image": "images/r_5.jpg",
+    "discount": 20,
+    "price": 9800,
+    "desc": "베베토 젤리 3종 택1 (미니베어 980g, 미니믹스 900g, 콜라 980g",
+    "url": "a.html"
+  },
+  "good_6": {
+    "image": "images/r_6.jpg",
+    "discount": 44,
+    "price": 7190,
+    "desc": "[11/7 오쎈 다운로드쿠폰가 7,670원] 크리오 쿨 맥스 민트 치약 100g x8개 민트/스트롱 민트 택1_I",
+    "url": "a.html"
+  },
+  "good_7": {
+    "image": "images/r_7.jpg",
+    "discount": 26,
+    "price": 9900,
+    "desc": "[쇼핑앱추가쿠폰] 해태 포키 극세4+블루베리2+딸기2 /극세 44g * 8 / 빼빼로데이 / 특별한 날엔 포키",
+    "url": "a.html"
+  },
+  "good_8": {
+    "image": "images/r_8.jpg",
+    "discount": 43,
+    "price": 30300,
+    "desc": "[앱다운시15%쿠폰증정] 종근당 락토핏 골드 50포 3통+30포/6통+30포 (유통기한 2025-01)",
+    "url": "a.html"
+  },
+  "good_9": {
+    "image": "images/r_9.jpg",
+    "discount": 12,
+    "price": 24900,
+    "desc": "베베잇츠 동결건조 과일칩 10봉",
+    "url": "a.html"
+  },
+  "good_10": {
+    "image": "images/r_10.jpg",
+    "discount": 4,
+    "price": 22080,
+    "desc": "[현대청할 20,750원] Dior Addict 디올 어딕트 립 글로우 립 밤 3.2g",
+    "url": "a.html"
+  },
+  "good_11": {
+    "image": "images/r_11.jpg",
+    "discount": 10,
+    "price": 19880,
+    "desc": "온더바디 플로럴 가든 바디워시 950g X 3개 (프리지아/자스민/체리블라썸 택 1)",
+    "url": "a.html"
+  },
+  "good_12": {
+    "url": "go.html"
+  }
+}

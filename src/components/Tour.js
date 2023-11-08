@@ -7,10 +7,35 @@ import "swiper/css/navigation";
 
 import "../styles/tour.css";
 import "../styles/common.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 function Tour() {
+  function numberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   const swiperRef = useRef();
+
+  const [htmlTag, setHtmlTag] = useState([]);
+
+  const axiosJsonData = () => {
+    axios
+      .get("tour.json")
+      .then(function (res) {
+        let arr = [];
+        for (let i = 0; i < res.data.total; i++) {
+          const obj = res.data["tour_" + (i + 1)];
+          arr[i] = obj;
+        }
+        setHtmlTag(arr);
+      })
+      .catch(function (error) {
+        // console.log(error);
+      });
+  };
+  useEffect(() => {
+    axiosJsonData();
+  }, []);
 
   return (
     <section className="tour">
@@ -53,231 +78,34 @@ function Tour() {
               }}
               className="tour-slide"
             >
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
+              {htmlTag.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="swiper-slide">
+                      <div className="tour-slide-item">
+                        <a href={item.url} className="tour-link">
+                          <div className="tour-img">
+                            <img src={item.image} alt={item.place} />
+                          </div>
+                          <div className="tour-info">
+                            <ul className="tour-good-list">
+                              <li>
+                                <span className="tour-good-info-desc">
+                                  <em>{item.title}</em>
+                                  <p>{item.place}</p>
+                                  <b>{numberWithCommas(item.price)}</b>
+                                  원~
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                          <button className="tour-plus">{item.event}</button>
+                        </a>
+                      </div>
                     </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="tour-slide-item">
-                  <a href="#" className="tour-link">
-                    <div className="tour-img">
-                      <img src="images/r_1.jpg" alt="" />
-                    </div>
-                    <div className="tour-info">
-                      <ul className="tour-good-list">
-                        <li>
-                          <span className="tour-good-info-desc">
-                            <em>얼리 체크인 or 레이트 체크아웃 포함</em>
-                            <p>
-                              [더욱 오래 단둘이]푸꾸옥 5일_특급서비스
-                              얼리체크인OR레이트체크아웃 풀만리조트
-                            </p>
-                            <b>1,099,000</b>
-                            원~
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button className="tour-plus">소아변동인기</button>
-                  </a>
-                </div>
-              </SwiperSlide>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
             {/* <!-- 좌, 우 버튼 --> */}
             <button className="slide-prev-bt">
