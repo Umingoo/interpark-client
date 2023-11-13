@@ -82,26 +82,26 @@ function Ticket() {
               {htmlTag.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div class="swiper-slide">
-                      <div class="ticket-slide-item">
-                        <a href={item.url} class="ticket-link">
-                          <div class="ticket-img">
+                    <div className="swiper-slide">
+                      <div className="ticket-slide-item">
+                        <a href={item.url} className="ticket-link">
+                          <div className="ticket-img">
                             <img src={item.image} alt={item.title} />
                           </div>
                           <div>
-                            <span class="rank">{item.rank}</span>
+                            <span className="rank">{item.rank}</span>
                           </div>
-                          <div class="ticket-info">
-                            <ul class="ticket-good-list">
+                          <div className="ticket-info">
+                            <ul className="ticket-good-list">
                               <li>
-                                <span class="ticket-info-desc">
+                                <span className="ticket-info-desc">
                                   {item.title}
                                   <b>{item.place}</b>
                                   <p>{item.date}</p>
                                 </span>
                               </li>
                               <li>
-                                <p class="ticket-seat">{item.option}</p>
+                                <p className="ticket-seat">{item.option}</p>
                               </li>
                             </ul>
                           </div>

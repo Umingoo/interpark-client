@@ -20,7 +20,9 @@ function Tour() {
 
   const axiosJsonData = () => {
     axios
-      .get("tour.json")
+      .get(
+        "https://port-0-interpark-server-1igmo82clopix4n6.sel5.cloudtype.app/tour"
+      )
       .then(function (res) {
         let arr = [];
         for (let i = 0; i < res.data.total; i++) {
